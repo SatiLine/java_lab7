@@ -3,9 +3,6 @@ package org.example.taskthree;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class TaskThree {
     public static void start() {
