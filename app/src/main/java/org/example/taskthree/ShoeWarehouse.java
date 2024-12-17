@@ -3,7 +3,7 @@ package org.example.taskthree;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.Executors; //для управления пулом потоков.
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadFactory;
 import java.util.Arrays;
@@ -15,8 +15,8 @@ public final class ShoeWarehouse {
     private final ExecutorService executorService;
 
     public ShoeWarehouse(final int consumersNumber, final int ordersPerConsumer) {
-        executorService = Executors.newFixedThreadPool(consumersNumber);
-        for(int i = 0; i < consumersNumber; ++i) {
+        executorService = Executors.newFixedThreadPool(consumersNumber); //Создается пул потоков фиксированного размера с количеством потоков, равным количеству потребителей.
+        for(int i = 0; i < consumersNumber; ++i) { //создаются и запускаются потоки потребителей
             executorService.submit(new Consumer(this, ordersPerConsumer));
         }
         executorService.shutdown();
