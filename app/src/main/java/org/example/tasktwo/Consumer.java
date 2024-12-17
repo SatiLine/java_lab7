@@ -1,6 +1,7 @@
 package org.example.tasktwo;
 
-import lombok.RequiredArgsConstructor;
+import lombok.RequiredArgsConstructor; //Эта аннотация автоматически генерирует конструктор для всех полей класса, 
+                                       //которые объявлены как final
 
 @RequiredArgsConstructor
 public final class Consumer extends Thread {
